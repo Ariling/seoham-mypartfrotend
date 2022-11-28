@@ -10,7 +10,22 @@ import Sender from "./Pages/Sender";
 import SenderUser from "./Pages/SenderUser";
 import Letter from "./Pages/Letter";
 import View from "./Pages/View";
-
+import SelectLetterType from "./Pages/New";
+import FileEditor from "./Pages/FileEditor";
+import LetterEditor from "./Pages/LetterEditor";
+import SelectPaper from "./Pages/SelectPaper";
+import New_tag from "./Pages/New_tag";
+import View_tags from "./Pages/View_tags";
+import View_letter from "./Pages/View_letter";
+import FindId from "./Pages/FindId";
+import FindPw from "./Pages/FindPW";
+import Create from "./Pages/Create";
+import LoginPage from "./Pages/LoginPage";
+import Contract from "./Pages/Contract";
+import Mypage from "./Pages/Mypage";
+import Modi_tag from "./Pages/Modi_tag";
+import Landing from "./Pages/Landing";
+import Letterupdate from "./Pages/Letterupdate";
 const reducer = (state, action) => {
   let newState = [];
   switch (action.type) {
@@ -51,7 +66,7 @@ const dummyData = [
     id: 3,
     tagName: "Spring",
     sender: "무지",
-    date: 1738179241917,
+    date: 1738179241923,
     content: "봄이 그렇게 좋냐 멍청이들아",
     randid: Math.floor(Math.random() * 3) + 1,
   },
@@ -61,6 +76,46 @@ const dummyData = [
     sender: "앨리스",
     date: 1738179241918,
     content: "아임 쏘 매드",
+    randid: Math.floor(Math.random() * 3) + 1,
+  },
+  {
+    id: 5,
+    tagName: "NewYear",
+    sender: "래비",
+    date: 1660469314000,
+    content: "새해복 많이 받으렴",
+    randid: Math.floor(Math.random() * 3) + 1,
+  },
+  {
+    id: 6,
+    tagName: "NewYear",
+    sender: "래비",
+    date: 1738179241923,
+    content: "새해복 많이 받으렴",
+    randid: Math.floor(Math.random() * 3) + 1,
+  },
+  {
+    id: 7,
+    tagName: "NewYear",
+    sender: "래비",
+    date: 1738179241923,
+    content: "새해복 많이 받으렴",
+    randid: Math.floor(Math.random() * 3) + 1,
+  },
+  {
+    id: 8,
+    tagName: "NewYear",
+    sender: "래비",
+    date: 1738179241923,
+    content: "새해복 많이 받으렴",
+    randid: Math.floor(Math.random() * 3) + 1,
+  },
+  {
+    id: 9,
+    tagName: "NewYear",
+    sender: "래비",
+    date: 1660469314000,
+    content: "새해복 많이 받으렴",
     randid: Math.floor(Math.random() * 3) + 1,
   },
 ];
@@ -92,7 +147,9 @@ function App() {
       <DiaryDispatchContext.Provider value={{ onCreate }}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/home" element={<Home />} />
+            
             <Route path="/next" element={<Next />} />
             <Route path="/new" element={<New />} />
             <Route path="/tag/:tagName" element={<Tag />} />
@@ -101,6 +158,23 @@ function App() {
             <Route path="/senderUser/:sender" element={<SenderUser />} />
             <Route path="/letter" element={<Letter />} />
             <Route path="/view/:id" element={<View />} />
+            <Route path="/selectlettertype" element={<SelectLetterType />} />
+            <Route path="/fileeditor" element={ <FileEditor />} />
+            <Route path="/lettereditor" element={<LetterEditor />} />
+            <Route path="/letterupdate/:postId" element={<Letterupdate />} />
+            <Route path="/selectpaper" element={<SelectPaper />} />
+            <Route path="/newTag" element={<New_tag />}/>
+            <Route path="/tags/:id" element={<View_tags />}/>
+            <Route path="/letter/:tagId/:id" element={<View_letter/>}/>
+            <Route path="/lettereditor/:postId" element={<LetterEditor />} />
+            <Route path="/mypage" element={<Mypage />} />
+            <Route path="/modiTag" element={<Modi_tag/>}/>
+
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/findid" element={<FindId/>}/>
+            <Route path="/findpw" element={<FindPw/>}/>
+            <Route path="/create" element={<Create/>}/>
+            <Route path="/contract" element={<Contract/>}/>
           </Routes>
         </BrowserRouter>
       </DiaryDispatchContext.Provider>
